@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button'
 
 const Page = () => {
   const {data: session} = useSession();
-  console.log("this is the session: ", session);
   
   return (
     <>

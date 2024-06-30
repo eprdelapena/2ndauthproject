@@ -3,9 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import dotenv from 'dotenv'; 
 import { connectDB } from "@/api/connectDB";
 import { registerSchema } from "@/schemas/registerSchema";
-import GoogleProvider from "next-auth/providers/google"
 import bcrypt from 'bcryptjs' 
-import Github from "next-auth/providers/github"; //1. import this
 
 dotenv.config(); 
 

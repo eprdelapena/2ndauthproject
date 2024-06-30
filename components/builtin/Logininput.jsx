@@ -23,7 +23,7 @@ const Logininput = () => {
         if(res?.error === "CredentialsSignin"){
           throw new Error("Invalid Credentials");
         }
-        router.replace("dashboard"); 
+        router.replace("/auth/dashboard"); 
       }
       catch(error){
         setError("Invalid username or password")
