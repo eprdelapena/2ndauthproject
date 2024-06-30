@@ -1,10 +1,11 @@
 "use client"
 
+'use client'
 import React from 'react'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 
-const page = () => {
+const Page = () => {
   const {data: session} = useSession();
   console.log("this is the session: ", session);
   
@@ -31,4 +32,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

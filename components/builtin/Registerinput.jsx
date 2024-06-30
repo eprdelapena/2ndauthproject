@@ -1,12 +1,12 @@
 'use client'
 
 import { useFormState } from "react-dom";
-import { registerAction } from '../features/registerAction';
+import { RegisterAction } from '../features/RegisterAction';
 import { useRouter } from "next/navigation";
 import React, {useEffect} from 'react';
 
 const Registerinput = () => {
-    const [state, formAction] = useFormState(registerAction, undefined);
+    const [state, formAction] = useFormState(RegisterAction, undefined);
     const router = useRouter();
 
     useEffect(() => {

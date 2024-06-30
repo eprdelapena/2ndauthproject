@@ -1,8 +1,10 @@
 // import { registerSchema } from "@/schemas/registerSchema";
 // import { connectDB } from "@/api/connectDB";
+
+'use client'
 import { getUser } from "@/api/getUser";
 
-export const registerAction = async (previousState, formData) => {
+export const RegisterAction = async (previousState, formData) => {
     
     const firstName = formData.get("firstName"); 
     const lastName = formData.get("lastName");
