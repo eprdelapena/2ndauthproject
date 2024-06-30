@@ -36,7 +36,7 @@ const Registerinput = () => {
 
             <input type="submit" className="w-full mt-2 cursor-pointer rounded-md text-white bg-violet-500 hover:bg-violet-700 h-[40px]" value="Register"/>
         </form>
-        <div className="w-full pt-2 text-center mt-3">────────────Or Sign-in with────────────</div>
+        
         
     </>
 

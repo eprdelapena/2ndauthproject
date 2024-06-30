@@ -28,7 +28,7 @@ const Loginform = () => {
             </CardContent>
 
             <CardFooter>
-                <Social/>
+
             </CardFooter>
 
             <CardFooter>

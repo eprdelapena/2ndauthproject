@@ -28,7 +28,6 @@ const Registerform = () => {
             </CardContent>
 
             <CardFooter>
-                <Social/>
             </CardFooter>
 
             <CardFooter>

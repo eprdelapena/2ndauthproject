@@ -10,7 +10,7 @@ const Login = () => {
         router.push('/auth/login')
     }
   return (
-    <Button onClick={onClick}> Sign-In </Button>
+    <Button> <a href="/auth/login" className="w-full"> Sign-in </a></Button>
   )
 }
 

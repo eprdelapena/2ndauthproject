@@ -36,14 +36,6 @@ const authOptions = {
                 }
             }
         }),
-        GoogleProvider({ 
-            clientId: process.env.GOOGLE_ID,
-            clientSecret: process.env.GOOGLE_SECRET
-        }),
-        Github({ 
-            clientId: process.env.GITHUB_ID,
-            clientSecret: process.env.GITHUB_SECRET
-        })
     ],
     session: {
         strategy: "jwt"
@@ -64,55 +56,6 @@ const authOptions = {
             return token;
           },
         async signIn({user, account, profile}){
-            if(account.provider === "google"){
-                try{
-                    connectDB();
-                    const user = await registerSchema.findOne({"emailadd": profile.email});
-                    if(user){
-                        return true;
-                    }
-                    else{
-                        const user = new registerSchema({ 
-                            firstname: profile.given_name,
-                            lastname: profile.family_name,
-                            emailadd: profile.email,
-                            password: profile.at_hash
-                        });
-                        user.save();
-                    }
-                    return true;
-                }
-                catch(error){
-                    console.error(error);
-                    return false;
-                }
-
-            }
-
-            if(account.provider === "github"){ 
-                try{
-                    connectDB();
-                    const user = await registerSchema.findOne({"emailadd": profile.email});
-                    if(user){
-                        return true;
-                    }
-                    else{
-                        const user = new registerSchema({ 
-                            firstname: profile.login,
-                            lastname: profile.login,
-                            emailadd: profile.email,
-                            password: profile.node_id
-                        });
-                        user.save();
-                    }
-                    return true;
-                }
-                catch(error){
-                    console.error(error);
-                    return false;
-                }
-            }
-
             if(account.provider === "credentials"){ 
                 try{
                     return true;
