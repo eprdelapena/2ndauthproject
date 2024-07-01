@@ -36,6 +36,7 @@ const Forgetpasswordinput = () => {
         }
         if(response.status === 200){
             setError("");
+            alert("Please reset your password in the email, redirecting to the login page")
             router.replace("login")
         }
       }

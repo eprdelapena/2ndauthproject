@@ -33,7 +33,6 @@ const authOptions = {
                     }
 
                     console.log("Successfully logged in");
-                    console.log("the user: ", user);
                     return user; 
                 }
                 catch(error){

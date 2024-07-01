@@ -10,7 +10,8 @@ dotenv.config();
 
 export const POST = async (request) => {
     const {email} = await request.json();
-    const paramLink = process.env.URLRESET
+    const domainName = process.env.NEXT_PUBLIC_AUTH_URL; // http://localhost:3000
+    const paramLink = process.env.URLRESET; // /auth/forgetpassword/
 
     await connectDB(); 
 
@@ -32,7 +33,7 @@ export const POST = async (request) => {
     existingUser.resetTokenExpiry = passwordResetExpires;
     
 
-    const resetURL = `${paramLink}${resetToken}`;
+    const resetURL = `${domainName}${paramLink}${resetToken}`;
 
     let emailSend = await sendVerificationEmail(email, resetURL);
     console.log("User verification sent");

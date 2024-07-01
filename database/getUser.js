@@ -15,7 +15,8 @@ export const getUser = async (data) => {
         return 1;
     }
     if(checkUser && checkUser?.verified === false){
-        const paramLink = process.env.URLVERIFICATION
+        const paramLink = process.env.URLVERIFICATION // /auth/verification/
+        const domainName = process.env.NEXT_PUBLIC_AUTH_URL // http://localhost:3000
         const token = crypto.randomBytes(20).toString("hex");
 
         const hashedToken =  crypto
@@ -24,7 +25,7 @@ export const getUser = async (data) => {
         .digest("hex");
 
         const verificationPath = token;
-        const verificationURL = `${paramLink}${verificationPath}`;
+        const verificationURL = `${domainName}${paramLink}${verificationPath}`;
 
         checkUser.verificationToken = hashedToken;
 
@@ -36,7 +37,9 @@ export const getUser = async (data) => {
     }
     
     if(!checkUser){
-        const paramLink = process.env.URLVERIFICATION
+        const paramLink = process.env.URLVERIFICATION // /auth/verification/
+        const domainName = process.env.NEXT_PUBLIC_AUTH_URL // http://localhost:3000
+
         const salt = await bcrypt.genSalt(10); 
         const hashedPassword = await bcrypt.hash(data.password, salt);
 
@@ -47,7 +50,7 @@ export const getUser = async (data) => {
         .digest("hex");
 
         const verificationPath = token;
-        const verificationURL = `${paramLink}${verificationPath}`;
+        const verificationURL = `${domainName}${paramLink}${verificationPath}`;
 
         const user = new registerSchema({ 
             firstname: data.firstName,
