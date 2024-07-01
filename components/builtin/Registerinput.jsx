@@ -1,7 +1,7 @@
 'use client'
 
 import { useFormState } from "react-dom";
-import { RegisterAction } from '../features/RegisterAction';
+import { RegisterAction } from '@/components/features/RegisterAction';
 import { useRouter } from "next/navigation";
 import React, {useEffect} from 'react';
 
