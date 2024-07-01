@@ -13,7 +13,7 @@ const Page = () => {
       <div className="w-[500px] flex-col flex items-center font-serif justify-center bg-blue-200 p-5 rounded-md">
         <div className='flex-1'>
           <h1 className="text-center my-6 font-serif"> Welcome to the dashboard page </h1>
-          <h5 className="text-center my-6 font-serif"> Hello ! <b> {session?.user?.firstname} </b> </h5>
+          <h5 className="text-center my-6 font-serif"> Hello ! <b> {session?.user?.name} {session?.user?.firstname} </b> </h5>
           <p className="text-center my-6 font-serif text-justify"> This dashboard page is for application purposes only.
           This shows that the maker of this page is able to make a Login and Registration System using NextAuth.
           I could also make a login system through google and github accounts and provide a

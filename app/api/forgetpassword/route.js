@@ -1,8 +1,10 @@
-import { connectDB } from "@/api/connectDB"; 
+import { connectDB } from "@/database/connectDB"; 
 import { registerSchema } from "@/schemas/registerSchema"; 
 import crypto from 'crypto'; 
 import { NextResponse } from "next/server"; 
+import { sendVerificationEmail } from "@/app/lib/mail";
 import dotenv from 'dotenv';
+import { cp } from "fs";
 
 dotenv.config();
 
@@ -28,8 +30,14 @@ export const POST = async (request) => {
     
     existingUser.resetToken = passwordResetToken;
     existingUser.resetTokenExpiry = passwordResetExpires;
+    
 
     const resetURL = `${paramLink}${resetToken}`;
+
+    let emailSend = await sendVerificationEmail(email, resetURL);
+    console.log("User verification sent");
+    console.log("status: ", emailSend);
+    existingUser.save();
     
-    console.log("this is the reset url: ", resetURL);
+    return new NextResponse("Reset password, for verification", {status: 200});
 }

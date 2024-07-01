@@ -1,7 +1,7 @@
 'use client'
 
 import { useFormState } from "react-dom";
-import { RegisterAction } from "@/components/features/registerAction";
+import { RegisterAction } from '../features/RegisterAction';
 import { useRouter } from "next/navigation";
 import React, {useEffect} from 'react';
 
@@ -11,7 +11,7 @@ const Registerinput = () => {
 
     useEffect(() => {
         if(state?.success !== null && state?.success === true){
-          alert("Registered Successfuly, Redirecting to the Login page");
+          alert("Email sent, please verify your email");
           router.push("/auth/login");
         }
       }, [state, router]);
@@ -34,10 +34,9 @@ const Registerinput = () => {
             <input className="border-2 border-gray-500 w-full mb-2 p-2" type="password" name="passwordMatch" placeholder="Confirm Password..." />
             {state?.passwordMatch && <div className="w-full text-center mb-2 text-red-600"> {state?.passwordMatch}</div>}
 
-            <input type="submit" className="w-full mt-2 cursor-pointer rounded-md text-white bg-violet-500 hover:bg-violet-700 h-[40px]" value="Register"/>
+            <input type="submit" className="w-full mt-2 cursor-pointer rounded-md text-white bg-violet-500 h-[40px]" value="Register"/>
         </form>
-        
-        
+        <div className="w-full pt-2 text-center mt-3">────────────Or Sign-in with────────────</div>
     </>
 
   )

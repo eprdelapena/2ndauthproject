@@ -21,7 +21,16 @@ const userSchema = new Schema({
         required: true,
     },
 
-    //1. import these new parameters
+    verificationToken: {
+        type: String,
+        required: false
+    },
+
+    verified: {
+        type: Boolean,
+        required: false
+    },
+
     resetToken: {
         type: String,
         required: false
@@ -30,7 +39,8 @@ const userSchema = new Schema({
     resetTokenExpiry: {
         type: Date,
         required: false
-    }
-}, {timestamps: true});
+    },
+
+}, {timestamps: true, strict: false});
 
 export const registerSchema = models?.users || model("users", userSchema);

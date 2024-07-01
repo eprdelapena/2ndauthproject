@@ -13,7 +13,6 @@ export const connectDB = async () => {
         else{ //3. else create a connection
             console.log("connecting...")
             const db = await connect(`${process.env.DB_LINK}`);
-            console.log("database: ", db);
             connection.isConnected = db.connections[0].readyState; // 4. if connected db will have a value ready state store it in the variable
             console.log("Database connected"); 
         }

@@ -9,7 +9,7 @@ const Backbuttonregister = () => {
     <>
         <div className="w-full flex items-center justify-center gap-x-2">
             <Button className="w-full" variant="link">
-                <Link href={'/auth/login'}> Already have an account? Sign-in here </Link>
+                <a href={'/auth/login'}> Already have an account? Sign-in here </a>
             </Button>
         </div>
     </>

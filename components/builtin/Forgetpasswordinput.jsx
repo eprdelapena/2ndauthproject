@@ -31,12 +31,12 @@ const Forgetpasswordinput = () => {
 
         //6. set response status
         if(response.status === 400){
-            setError("This email does not exists");
+            setError("*This email does not exist in our database");
             return;
         }
         if(response.status === 200){
             setError("");
-            return;
+            router.replace("login")
         }
       }
       catch(error){

@@ -20,7 +20,7 @@ const Forgetpassword = () => {
             <CardHeader>
                 <div className="w-full flex flex-col gap-y-4 items-center justify center">
                     <h1 className="text-3xl font-semibold"> 🔒 Auth Codebase </h1>
-                    <p className="text-sm"> Reset your password </p>
+                    <p className="text-sm"> Recover your password </p>
                 </div>
             </CardHeader>
 

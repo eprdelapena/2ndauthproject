@@ -2,7 +2,7 @@
 // import { connectDB } from "@/api/connectDB";
 
 'use client'
-import { getUser } from "@/api/getUser";
+import { getUser } from "@/database/getUser";
 
 export const RegisterAction = async (previousState, formData) => {
     
