@@ -1,5 +1,4 @@
-// import { registerSchema } from "@/schemas/registerSchema";
-// import { connectDB } from "@/api/connectDB";
+
 
 'use client'
 import { getUser } from "@/database/getUser";
